@@ -1,8 +1,9 @@
 feitos = -1
+bazinga = 0
 
 while True:
     mensagem = input()
-    
+
     if mensagem == 'É o fim da Estrada pra Sheldon Cooper':
         break
 
@@ -11,18 +12,26 @@ while True:
         continue
     if feitos == -1 and mensagem == 'Começou a Trabalhar na Caltech':
         feitos = 0
+        bazinga = 0
     elif feitos == 0 and mensagem == 'Trabalho sobre a String Theory':
         feitos = 1
+        bazinga = 0
     elif feitos == 1 and mensagem == 'Ganhar o Chancellor de ciência':
         feitos = 2
+        bazinga = 0
     elif feitos == 2 and mensagem == 'Pensar na Teoria de Cooper-Hofstader':
         feitos = 3
+        bazinga = 0
     elif feitos == 3 and mensagem == 'Criou a Super Assimetria':
         feitos = 4
-    elif feitos == 4 and mensagem == 'Ganhar o Nobel':
+        bazinga = 0
+    elif mensagem == 'Ganhar o Nobel':
         feitos = 5
         break
-
+    elif mensagem == 'Bazinga' and feitos > -1 and bazinga < 1:
+        bazinga += 1
+        feitos -= 1
+ 
 if feitos == -1:
     print("Que potencial desperdiçado...")
 elif feitos <= 1:
@@ -33,4 +42,3 @@ elif feitos == 4:
     print("Nãoooooo, esse momento ia ser seu Sheldon")
 elif feitos == 5:
     print("Você conseguiu Sheldon, o Nobel é seu!!!")
-
